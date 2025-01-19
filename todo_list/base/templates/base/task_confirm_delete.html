@@ -1,0 +1,11 @@
+{% extends "base/layout.html" %} {% block content %}
+
+<a href="{% url 'tasks' %}"><h3>Go back</h3></a>
+
+<form method="post">
+  {% csrf_token %}
+  <p>Are you sure you want to delete this task? {{task}}</p>
+  <input type="submit" value="delete" />
+</form>
+
+{% endblock %}
